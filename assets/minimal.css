@@ -1,0 +1,98 @@
+/* Vacprotech soft minimal layer: loaded after style.css INSTEAD of glass.css.
+   Flat off-white page, no cards, no lines, no shadows. Space and type do the work. */
+:root {
+  --bg: #fafaf8; --surface: transparent; --surface-2: #f1f1ee; --tile: #f3f3f0;
+  --ink: #14202b; --ink-2: #5d6975; --ink-3: #98a1aa; --line: transparent;
+  --brand: #1d4f7c; --hero-bg: transparent; --hero-ink: #14202b; --hero-ink-2: #5d6975; --hero-line: transparent;
+  --ember: #14202b; --ember-ink: #fff; --ember-soft: #f1f1ee;
+  --shadow: none; --shadow-lg: none; --r: 18px; --r-sm: 12px; --r-lg: 24px;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg: #fafaf8; --surface: transparent; --surface-2: #f1f1ee; --ink: #14202b; --ink-2: #5d6975; --ink-3: #98a1aa; --brand: #1d4f7c; --hero-ink: #14202b; --hero-ink-2: #5d6975; --shadow: none; --shadow-lg: none; color-scheme: light; } }
+:root[data-theme="dark"] { --bg: #fafaf8; --surface: transparent; --surface-2: #f1f1ee; --ink: #14202b; --ink-2: #5d6975; --ink-3: #98a1aa; --brand: #1d4f7c; --hero-ink: #14202b; --hero-ink-2: #5d6975; --shadow: none; --shadow-lg: none; color-scheme: light; }
+
+body { background: var(--bg); font-weight: 400; }
+h1, h2, h3 { font-weight: 600; letter-spacing: -.025em; }
+
+.top, .mega, .icon-btn, .search-btn, .search-btn kbd, .btn, .chip, .tag, .scale, .s-detail, .s-links a, .finder-card, .bt, .bt .bt-img, .bt.big .bt-img,
+.soon-card, .pill-soon, .card, .card .ph, .card .quick, .side, .fbox, .fchip, .search, .media, .thumbs button, .key div, .note, .tabs, .spec-t, .spec-t td,
+.spec-t th, .tbl-wrap, .tbl-tools input, .b-item, .b-item .bt-th, .b-item input, .f input, .f textarea, .f select, .cmdk-box, .cmdk-in, .cmdk-list .th,
+.foot-bottom, .copy-mail, .panel, .kv input, .login, .pd-bar, .sel, nav.main.open, .grp-head, .thumb, .mega .mt { border: 0 !important; box-shadow: none; }
+.hero::before, .hero::after, .eyebrow::before { display: none; }
+:focus-visible { outline: 0; box-shadow: 0 0 0 3px rgba(29, 79, 124, .25); }
+
+.top { background: rgba(250, 250, 248, .85); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); }
+.mega { background: var(--bg); }
+.hero { background: transparent; color: var(--ink); padding: 96px 0 140px; }
+.hero h1 { font-weight: 500; font-size: clamp(40px, 6vw, 76px); letter-spacing: -.035em; }
+.hero h1 em { color: var(--brand); }
+.eyebrow { color: var(--ink-3); }
+.hero-facts b { font-weight: 400; }
+
+.scale, .finder-card { background: var(--surface-2); border-radius: var(--r-lg); }
+.finder-card { box-shadow: none; }
+.s-seg { border-radius: 999px; filter: none; }
+.s-seg[aria-selected="true"] { box-shadow: none; }
+.s-seg[aria-selected="true"]::after { border-radius: 50%; width: 8px; height: 8px; background: var(--ink); }
+.s-links a { background: var(--bg); color: var(--ink); }
+.s-links a:hover { background: var(--ink); color: #fff; }
+
+/* cards dissolve into the page: only the photo tile remains */
+.bt, .card, .soon-card { background: transparent; box-shadow: none; }
+.bt:hover, .card:hover { transform: none; box-shadow: none; background: transparent; }
+.bt .bt-img, .card .ph, .media { background: var(--tile); border-radius: var(--r); }
+.card .ph { border-radius: var(--r); }
+.card .body { padding: 14px 2px 4px; }
+.bt .bt-body { padding: 22px 8px; }
+.bt { gap: 8px; }
+.card .specs span, .tag { background: transparent; padding-left: 0; color: var(--ink-3); }
+.card .quick { background: var(--bg); }
+.soon-card { background: var(--surface-2); }
+
+section.s.alt { background: transparent; }
+.side { background: transparent; }
+.fbox { padding: 12px 0; }
+.fbox summary::after, .fbox:not([open]) summary::after { content: ""; width: 7px; height: 7px; border-right: 1.5px solid var(--ink-3); border-bottom: 1.5px solid var(--ink-3); transform: rotate(45deg); margin-top: 4px; }
+.fbox:not([open]) summary::after { transform: rotate(-45deg); }
+.spec-t { background: transparent; }
+.spec-t td:first-child, .spec-t.grid-t th { background: transparent; color: var(--ink-3); }
+.spec-t td, .spec-t th { padding: 12px 8px; }
+.spec-t tr:nth-child(even) td { background: var(--surface-2); }
+.tabs { gap: 6px; }
+.tabs button { border-radius: 999px; border-bottom: 0; margin: 0; padding: 9px 18px; }
+.tabs button[aria-selected="true"] { background: var(--ink); color: #fff; }
+.key div { background: var(--surface-2); }
+
+.btn { background: var(--ink); color: #fff; border-radius: 999px; box-shadow: none; }
+.btn:hover { background: #2c3b49; }
+.btn.gold { background: var(--ink); color: #fff; }
+.btn.gold:hover { background: #2c3b49; }
+.btn.ghost, .btn.on-dark.ghost { background: var(--surface-2); color: var(--ink); }
+.btn.ghost:hover { background: #e7e7e3; }
+.chip, .fchip { background: var(--surface-2); border-radius: 999px; }
+.chip.on, .fchip.on { background: var(--ink); color: #fff; }
+.fchip.on small { color: #b9c2cb; }
+.icon-btn, .search-btn { background: var(--surface-2); border-radius: 999px; }
+.badge { background: var(--ink); color: #fff; }
+.search, .sel, .f input, .f textarea, .f select, .tbl-tools input, .kv input, .b-item input { background: var(--surface-2); border-radius: 999px; box-shadow: none; }
+.f textarea { border-radius: 18px; }
+nav.main a:hover, nav.main button:hover, nav.main a.on, nav.main button[aria-expanded="true"] { background: var(--surface-2); }
+nav.main a, nav.main button { border-radius: 999px; }
+.logo i { background: var(--ink); color: #fff; box-shadow: none; }
+
+.grp-head { padding-bottom: 0; }
+.grp-head .band { width: 8px; height: 8px; border-radius: 50%; }
+footer { background: var(--surface-2); color: var(--ink-2); }
+.foot b, .foot h4, .foot .logo { color: var(--ink); }
+.foot a { color: var(--ink-2); } .foot a:hover { color: var(--ink); }
+.foot .logo small { color: var(--brand); }
+.copy-mail { background: transparent; color: var(--ink); }
+.toast { background: var(--ink); color: #fff; }
+.toast a { color: #cfe3f5; }
+.overlay, .cmdk { background: rgba(250, 250, 248, .7); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); }
+.drawer, .cmdk-box { background: var(--bg); box-shadow: 0 30px 80px -30px rgba(20, 32, 43, .25); }
+.cmdk-list a:hover, .cmdk-list a.act { background: var(--surface-2); }
+.adm aside { background: var(--surface-2); color: var(--ink-2); }
+.adm aside a { color: var(--ink-2); } .adm aside a:hover, .adm aside a.on { background: var(--bg); color: var(--ink); }
+.adm aside h4 { color: var(--ink-3); }
+.panel { background: var(--surface-2); box-shadow: none; }
+.login { background: var(--surface-2); box-shadow: none; }

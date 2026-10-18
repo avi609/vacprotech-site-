@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Vacprotech, Vacuum &amp; High-End Equipment</title>
+<meta name="description" content="Vacuum furnaces, chambers, ISO and CF fittings, valves, mass flow controllers and leak detectors for semiconductor and quantum fabrication.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css?v=light1">
+<link rel="stylesheet" href="assets/glass.css?v=5">
+</head>
+<body>
+<a class="sr" href="#app">Skip to content</a>
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#/" aria-label="Vacprotech home"><i>V</i><span>Vacpro<small>tech</small></span></a>
+    <nav class="main" id="mainNav" aria-label="Main">
+      <button id="megaBtn" aria-expanded="false" aria-controls="mega">Products <span aria-hidden="true">▾</span></button>
+      <a href="#/cat/furnaces">Furnaces</a>
+      <a href="#/cat/fittings">Fittings &amp; Valves</a>
+      <a href="#/calc">Vacuum Atlas</a>
+    </nav>
+    <div class="top-tools">
+      <button class="search-btn" id="searchBtn" aria-label="Search products"><span aria-hidden="true">⌕</span><span class="st">Search products, DN, material</span><kbd>/</kbd></button>
+      <button class="icon-btn" id="basketBtn" aria-label="Open quote basket" title="Quote basket">▤<b class="badge" id="bcount" hidden>0</b></button>
+      <button class="icon-btn menu-btn" id="menuBtn" aria-label="Menu" aria-expanded="false">☰</button>
+    </div>
+  </div>
+  <div class="mega" id="mega"><div class="wrap"><div class="mega-grid" id="megaGrid"></div></div></div>
+</header>
+
+<main id="app"></main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a class="logo" href="#/"><i>V</i><span>Vacpro<small>tech</small></span></a>
+        <p>Vacuum and high-end equipment for semiconductor and quantum fabrication.</p>
+      </div>
+      <div><h4>Products</h4><span id="footCats"></span></div>
+      <div><h4>Tools</h4><a href="#/calc">Vacuum Atlas</a><a href="#/products">All products</a><a href="#/contact">Request a quote</a></div>
+      <div><h4>Contact</h4><p style="margin-bottom:10px">Send us your drawing or your vacuum level and we reply with a quotation.</p><button class="copy-mail" id="copyMail" type="button">info@vacprotech.com</button></div>
+    </div>
+    <div class="foot-bottom"><span>© Vacprotech</span></div>
+  </div>
+</footer>
+
+<div class="overlay" id="ov"><div class="drawer" id="drawer"></div></div>
+<div class="cmdk" id="cmdk" role="dialog" aria-label="Search products">
+  <div class="cmdk-box">
+    <div class="cmdk-in"><span aria-hidden="true" style="font-size:20px;color:var(--ink-3)">⌕</span><input id="cmdkIn" type="text" placeholder="Search a part, DN size or material…" autocomplete="off" aria-label="Search products"><button class="chip" id="cmdkX" type="button">Esc</button></div>
+    <div class="cmdk-list" id="cmdkList"></div>
+  </div>
+</div>
+<div class="lightbox" id="lightbox"><img alt="" id="lbImg"></div>
+
+<script src="assets/data.js?v=light1"></script>
+<script src="assets/store.js?v=light1"></script>
+<script src="assets/calc.js?v=light1"></script>
+<script src="assets/app.js?v=light1"></script>
+</body>
+</html>
